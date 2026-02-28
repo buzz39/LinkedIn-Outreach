@@ -116,9 +116,9 @@ The public privacy policy is hosted via GitHub Pages at:
 
 > **https://buzz39.github.io/LinkedIn-Outreach/privacy_policy.html**
 
-To enable GitHub Pages (one-time setup):
+The site is deployed automatically by the [GitHub Actions workflow](.github/workflows/pages.yml)
+whenever changes are pushed to `main`. No manual configuration is required.
 
-1. Go to the repository on GitHub → **Settings** → **Pages**
-2. Under **Source**, select **Deploy from a branch**
-3. Set **Branch** to `main` and **Folder** to `/docs`
-4. Click **Save** — the site will be live within a minute
+> **One-time prerequisite:** In the repository **Settings → Pages**, set the
+> **Source** to **GitHub Actions** (not "Deploy from a branch"). This only
+> needs to be done once by a repository admin.
