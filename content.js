@@ -23,23 +23,6 @@ function extractProfileInfo() {
   return { name, bio, location, website, about, posts };
 }
 
-// Function to send profile data to background script
-function sendProfileData(profileData) {
-  chrome.runtime.sendMessage({ action: 'analyzeProfile', data: profileData }, (response) => {
-    if (response.message) {
-      displayOutreachMessage(response.message);
-    } else {
-      console.error('Error generating outreach message:', response.error);
-    }
-  });
-}
-
-// Function to display outreach message
-function displayOutreachMessage(message) {
-  // You can implement this function to display the message in the UI
-  console.log('Generated outreach message:', message);
-}
-
 // Function to paste message into LinkedIn DM
 function pasteMessageToDM(message) {
   const messageButton = document.querySelector('.message-anywhere-button');
@@ -57,15 +40,6 @@ function pasteMessageToDM(message) {
     console.error('Message button not found');
   }
 }
-
-// Main function to run when the page loads
-function main() {
-  const profileData = extractProfileInfo();
-  sendProfileData(profileData);
-}
-
-// Run the main function when the page is fully loaded
-window.addEventListener('load', main);
 
 // Listen for messages from the popup
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {

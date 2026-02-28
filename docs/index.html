@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkedIn Outreach – Chrome Extension</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      background: #f9f9f9;
+      line-height: 1.7;
+    }
+    header {
+      background: #0a66c2;
+      color: #fff;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; font-weight: 700; }
+    header p { margin-top: 0.6rem; font-size: 1rem; opacity: 0.9; }
+    main {
+      max-width: 680px;
+      margin: 2.5rem auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      padding: 2.5rem 2rem;
+    }
+    h2 { font-size: 1.2rem; font-weight: 600; color: #0a66c2; margin: 1.8rem 0 0.6rem; }
+    p { margin-bottom: 0.8rem; }
+    ul { margin: 0.4rem 0 0.8rem 1.4rem; }
+    li { margin-bottom: 0.4rem; }
+    a { color: #0a66c2; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .btn-primary { background: #0a66c2; color: #fff; }
+    .btn-secondary { background: #fff; color: #0a66c2; border: 1px solid #0a66c2; }
+    .btn:hover { opacity: 0.88; text-decoration: none; }
+    footer {
+      text-align: center;
+      font-size: 0.82rem;
+      color: #6b7280;
+      padding: 1.5rem 1rem 2rem;
+    }
+    @media (max-width: 600px) {
+      main { margin: 1rem; padding: 1.5rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>LinkedIn Outreach</h1>
+  <p>AI-powered outreach messages for LinkedIn profiles</p>
+</header>
+
+<main>
+  <p>
+    <strong>LinkedIn Outreach</strong> is a Chrome extension that analyzes LinkedIn profiles and
+    generates personalized outreach messages using OpenAI's GPT-4o-mini model.
+  </p>
+
+  <h2>Features</h2>
+  <ul>
+    <li>🔍 Extracts name, bio, location, about section, and recent posts from any LinkedIn profile</li>
+    <li>🤖 Generates friendly, professional, personalized messages via the OpenAI API</li>
+    <li>📋 One-click paste into LinkedIn's DM compose box</li>
+    <li>🔑 Stores your OpenAI API key locally – never sent to our servers</li>
+  </ul>
+
+  <h2>Links</h2>
+  <div class="links">
+    <a class="btn btn-primary" href="https://github.com/buzz39/LinkedIn-Outreach" target="_blank" rel="noopener">
+      GitHub Repository
+    </a>
+    <a class="btn btn-secondary" href="privacy_policy.html">
+      Privacy Policy
+    </a>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 LinkedIn Outreach &mdash;
+  <a href="privacy_policy.html">Privacy Policy</a>
+</footer>
+
+</body>
+</html>

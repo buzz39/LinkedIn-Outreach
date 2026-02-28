@@ -16,6 +16,12 @@ A Chrome extension that analyzes LinkedIn profiles and generates personalized ou
 
 ## Installation
 
+### Chrome Web Store
+
+Install the extension directly from the [Chrome Web Store](#) *(link will be added after publishing)*.
+
+### Manual Installation (Developer Mode)
+
 1. Clone or download this repository:
    ```bash
    git clone https://github.com/buzz39/LinkedIn-Outreach.git
@@ -90,6 +96,8 @@ LinkedIn-Outreach/
 - Profile data is sent to OpenAI only when you click **Generate Message**.
 - No data is collected or stored by this extension beyond your local machine.
 
+For full details, see the [Privacy Policy](https://buzz39.github.io/LinkedIn-Outreach/privacy_policy.html).
+
 ## Contributing
 
 1. Fork the repository
@@ -101,3 +109,16 @@ LinkedIn-Outreach/
 ## License
 
 This project is open source. See the repository for details.
+
+## GitHub Pages
+
+The public privacy policy is hosted via GitHub Pages at:
+
+> **https://buzz39.github.io/LinkedIn-Outreach/privacy_policy.html**
+
+The site is deployed automatically by the [GitHub Actions workflow](.github/workflows/pages.yml)
+whenever changes are pushed to `main`. No manual configuration is required.
+
+> **One-time prerequisite:** In the repository **Settings → Pages**, set the
+> **Source** to **GitHub Actions** (not "Deploy from a branch"). This only
+> needs to be done once by a repository admin.

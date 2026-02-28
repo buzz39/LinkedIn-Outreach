@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
   "name": "LinkedIn Outreach",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Analyze LinkedIn profiles and generate personalized outreach messages using OpenAI",
+  "homepage_url": "https://github.com/buzz39/LinkedIn-Outreach",
   "permissions": [
     "activeTab",
     "storage"
