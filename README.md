@@ -96,7 +96,7 @@ LinkedIn-Outreach/
 - Profile data is sent to OpenAI only when you click **Generate Message**.
 - No data is collected or stored by this extension beyond your local machine.
 
-For full details, see the [Privacy Policy](privacy_policy.md).
+For full details, see the [Privacy Policy](https://buzz39.github.io/LinkedIn-Outreach/privacy_policy.html).
 
 ## Contributing
 
@@ -109,3 +109,16 @@ For full details, see the [Privacy Policy](privacy_policy.md).
 ## License
 
 This project is open source. See the repository for details.
+
+## GitHub Pages
+
+The public privacy policy is hosted via GitHub Pages at:
+
+> **https://buzz39.github.io/LinkedIn-Outreach/privacy_policy.html**
+
+To enable GitHub Pages (one-time setup):
+
+1. Go to the repository on GitHub → **Settings** → **Pages**
+2. Under **Source**, select **Deploy from a branch**
+3. Set **Branch** to `main` and **Folder** to `/docs`
+4. Click **Save** — the site will be live within a minute
