@@ -1,124 +1,75 @@
-# LinkedIn Outreach
+# LinkedIn Outreach 💼
 
-A Chrome extension that analyzes LinkedIn profiles and generates personalized outreach messages using OpenAI's GPT-4o-mini model.
+> A tiny Chrome extension that reads the LinkedIn profile you're viewing and generates a personalized outreach message via OpenAI — then pastes it straight into the DM box.
 
-## Features
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue.svg)](https://developer.chrome.com/docs/extensions/mv3/intro/)
+[![Privacy](https://img.shields.io/badge/Privacy-BYOK%20%7C%20No%20Tracking-green.svg)](https://buzz39.github.io/LinkedIn-Outreach/privacy_policy.html)
 
-- 🔍 **Profile Analysis** – Automatically extracts name, bio, location, website, about section, and recent posts from any LinkedIn profile page
-- 🤖 **AI-Powered Messages** – Generates friendly, professional, and personalized outreach messages via the OpenAI API
-- 📋 **One-Click Paste** – Inserts the generated message directly into LinkedIn's DM compose box
-- 🔑 **Secure Key Storage** – Stores your OpenAI API key locally using Chrome's built-in storage API
+## ✨ What it does
 
-## Prerequisites
+1. Open any LinkedIn profile
+2. Click the extension icon
+3. Hit **Generate Message** → AI writes a tailored opener using their bio, headline, and recent posts
+4. Hit **Paste to DM** → message lands in the LinkedIn message box, ready to send
 
-- Google Chrome (or any Chromium-based browser)
-- An [OpenAI API key](https://platform.openai.com/api-keys)
+That's it. No CRM bloat, no "AI prospecting suite". Just one job, done well.
 
-## Installation
+## 🔒 Privacy-first by design
 
-### Chrome Web Store
+- **BYOK** (bring your own OpenAI API key) — stored only in `chrome.storage.local`, never sent anywhere except OpenAI
+- **Zero tracking** — no analytics, no telemetry, no servers (other than OpenAI's API)
+- **Open source** — read the code, audit it yourself
+- **Manifest V3** — runs only on `linkedin.com`
 
-Install the extension directly from the [Chrome Web Store](#) *(link will be added after publishing)*.
+## 📥 Install
 
-### Manual Installation (Developer Mode)
+### Chrome Web Store (coming soon)
+*Pending review — link will go here.*
 
-1. Clone or download this repository:
-   ```bash
-   git clone https://github.com/buzz39/LinkedIn-Outreach.git
-   ```
+### Manual install (right now)
+1. Download the latest `linkedin-outreach-vX.X.X.zip` from [Releases](https://github.com/buzz39/LinkedIn-Outreach/releases)
+2. Unzip it
+3. Open `chrome://extensions/`
+4. Enable **Developer mode** (top right toggle)
+5. Click **Load unpacked** → select the unzipped folder
+6. Click the extension icon, paste your OpenAI API key (starts with `sk-...`), hit **Save Key**
+7. Open any LinkedIn profile and start using it
 
-2. Open Chrome and navigate to `chrome://extensions/`
+## 🛠️ For developers
 
-3. Enable **Developer mode** (toggle in the top-right corner)
-
-4. Click **Load unpacked** and select the repository folder
-
-5. The **LinkedIn Outreach** extension icon will appear in your Chrome toolbar
-
-## Usage
-
-1. **Set your API key**
-   - Click the extension icon in the Chrome toolbar
-   - Enter your OpenAI API key in the password field
-   - Click **Save API Key**
-
-2. **Navigate to a LinkedIn profile**
-   - Open any LinkedIn profile page (e.g., `linkedin.com/in/username`)
-
-3. **Generate a message**
-   - Click the extension icon
-   - Click **Generate Message**
-   - The personalized outreach message will appear in the text area
-
-4. **Send the message**
-   - Click **Paste Message to DM** to automatically insert the message into LinkedIn's message compose box
-   - Review the message and hit send
-
-## Project Structure
-
-```
-LinkedIn-Outreach/
-├── manifest.json      # Extension configuration (Manifest V3)
-├── background.js      # Service worker: calls OpenAI API and stores messages
-├── content.js         # Content script: scrapes profile data and pastes messages
-├── popup.html         # Extension popup UI
-├── popup.js           # Popup logic: triggers generation and paste actions
-├── icon16.png         # Extension icon (16×16)
-├── icon48.png         # Extension icon (48×48)
-└── icon128.png        # Extension icon (128×128)
+```bash
+git clone https://github.com/buzz39/LinkedIn-Outreach.git
+cd LinkedIn-Outreach
+# load as unpacked extension via chrome://extensions/
 ```
 
-## How It Works
+### Files
+- `manifest.json` — MV3 config
+- `popup.html` / `popup.js` — extension popup UI + logic
+- `content.js` — scrapes profile + pastes DM
+- `background.js` — service worker (handles OpenAI API calls to keep the key out of LinkedIn's page context)
+- `docs/privacy_policy.html` — published to GitHub Pages
 
-1. **Content Script (`content.js`)** runs on every LinkedIn page and extracts:
-   - Name, bio, location, and website from the profile header
-   - The full "About" section
-   - Up to 5 recent posts
+### Build a release zip
+```bash
+zip -r linkedin-outreach-vX.X.X.zip . -x "*.git*" "dist/*" "docs/*" "instructions.md" "README.md" "*.DS_Store"
+```
 
-2. **Popup (`popup.js`)** requests the extracted data from the content script and forwards it to the background service worker.
+## 🌐 Privacy Policy
 
-3. **Background Script (`background.js`)** sends the profile data to the OpenAI Chat Completions API (`gpt-4o-mini`) and returns a concise, personalized 3–4 sentence outreach message.
+Hosted via GitHub Pages: https://buzz39.github.io/LinkedIn-Outreach/privacy_policy.html
 
-4. The generated message is displayed in the popup and can be pasted into LinkedIn's DM box with a single button click.
+> **One-time prerequisite:** In repo Settings → Pages, set the Source to **GitHub Actions**.
 
-## Permissions
+## 🤝 Contributing
 
-| Permission | Reason |
-|---|---|
-| `activeTab` | Read the currently open LinkedIn profile page |
-| `storage` | Persist the OpenAI API key and generated messages locally |
-| `https://*.linkedin.com/*` | Access LinkedIn profile pages |
-| `https://api.openai.com/*` | Call the OpenAI API to generate messages |
+PRs welcome — keep it small and focused. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Privacy
+## 📝 License
 
-- Your OpenAI API key is stored **locally** in Chrome's storage and is never transmitted anywhere other than to the OpenAI API.
-- Profile data is sent to OpenAI only when you click **Generate Message**.
-- No data is collected or stored by this extension beyond your local machine.
+MIT — see [LICENSE](LICENSE).
 
-For full details, see the [Privacy Policy](https://buzz39.github.io/LinkedIn-Outreach/privacy_policy.html).
+---
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m 'Add your feature'`
-4. Push to the branch: `git push origin feature/your-feature`
-5. Open a pull request
-
-## License
-
-This project is open source. See the repository for details.
-
-## GitHub Pages
-
-The public privacy policy is hosted via GitHub Pages at:
-
-> **https://buzz39.github.io/LinkedIn-Outreach/privacy_policy.html**
-
-The site is deployed automatically by the [GitHub Actions workflow](.github/workflows/pages.yml)
-whenever changes are pushed to `main`. No manual configuration is required.
-
-> **One-time prerequisite:** In the repository **Settings → Pages**, set the
-> **Source** to **GitHub Actions** (not "Deploy from a branch"). This only
-> needs to be done once by a repository admin.
+Made with ☕ + a bit of LinkedIn fatigue.
