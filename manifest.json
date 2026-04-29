@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "LinkedIn Outreach",
-  "version": "1.1.1",
-  "description": "AI-powered personalized LinkedIn outreach messages. Reads any profile, writes a tailored message in seconds. BYOK.",
+  "version": "1.2.0",
+  "description": "AI-powered personalized LinkedIn outreach. Reads any profile, writes a tailored message in seconds. BYOK with OpenAI or OpenRouter (free models available).",
   "homepage_url": "https://github.com/buzz39/LinkedIn-Outreach",
   "permissions": [
     "activeTab",
@@ -10,7 +10,8 @@
   ],
   "host_permissions": [
     "https://*.linkedin.com/*",
-    "https://api.openai.com/*"
+    "https://api.openai.com/*",
+    "https://openrouter.ai/*"
   ],
   "action": {
     "default_popup": "popup.html",
